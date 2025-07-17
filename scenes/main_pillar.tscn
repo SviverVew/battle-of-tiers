@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfjw3yxn7i7g7"]
+
+[ext_resource type="Texture2D" uid="uid://dm7o0g4rd8u6k" path="res://assets/Tower/main tower.png" id="1_2jr0h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qsgm"]
+radius = 32.0
+height = 192.0
+
+[node name="CollisionShape2D" type="CollisionShape2D"]
+shape = SubResource("CapsuleShape2D_6qsgm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(4, -19)
+scale = Vector2(0.0790816, 0.0790816)
+texture = ExtResource("1_2jr0h")

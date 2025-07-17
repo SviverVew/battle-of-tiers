@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cu15j77vxdok8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterSelect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GlobalTimer" type="Timer" parent="CharacterSelect"]
+
+[node name="CountdownLabel" type="Label" parent="CharacterSelect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Teams" type="HBoxContainer" parent="CharacterSelect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Team0Container" type="VBoxContainer" parent="CharacterSelect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Team1Container" type="VBoxContainer" parent="CharacterSelect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

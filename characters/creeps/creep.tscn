@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpmtogsok7ebs"]
+
+[ext_resource type="Texture2D" uid="uid://bn4lbqbrohr7m" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-1.png" id="1_bx2wl"]
+[ext_resource type="Script" uid="uid://bcwegckw1vob0" path="res://characters/creeps/creep.gd" id="1_qq7sw"]
+[ext_resource type="Texture2D" uid="uid://wonm4cjfb6me" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-2.png" id="2_qq7sw"]
+[ext_resource type="Texture2D" uid="uid://dl8lo8a55f3nn" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-3.png" id="3_jq85l"]
+[ext_resource type="Texture2D" uid="uid://dd81yg48qy41r" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-4.png" id="4_0rx0x"]
+[ext_resource type="Texture2D" uid="uid://c12eodq3jon3u" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-5.png" id="5_scybl"]
+[ext_resource type="Texture2D" uid="uid://o7kgkr0ueod3" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-6.png" id="6_n7bv3"]
+[ext_resource type="Texture2D" uid="uid://b5juh7yjacaup" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-7.png" id="7_6wmm2"]
+[ext_resource type="Texture2D" uid="uid://b5wcrr5kioy27" path="res://assets/Characters/Enemies and NPC/yeti/Sprites/yeti-8.png" id="8_7dt5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjs23"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vkeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bx2wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qq7sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jq85l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0rx0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_scybl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n7bv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6wmm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7dt5u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcuu7"]
+
+[node name="Creep" type="CharacterBody2D"]
+script = ExtResource("1_qq7sw")
+gap1_left = -467.0
+gap1_right = -347.0
+gap2_left = 1766.0
+gap2_right = 1951.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kjs23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.655, 0.655)
+sprite_frames = SubResource("SpriteFrames_4vkeg")
+animation = &"idle"
+frame_progress = 0.656984
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_dcuu7")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="GapRay" type="RayCast2D" parent="."]
+position = Vector2(11, 12)
+
+[node name="DownProbe" type="RayCast2D" parent="."]
+position = Vector2(12, 12)
+target_position = Vector2(0, 64)
