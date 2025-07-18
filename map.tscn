@@ -1966,7 +1966,6 @@ offset_bottom = 130.0
 metadata/_edit_use_anchors_ = true
 
 [node name="TouchControl" parent="Control" instance=ExtResource("1_urblq")]
-visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_c7s6e")]
 z_index = 10
@@ -2077,21 +2076,18 @@ offset_bottom = 23.0
 [node name="Timer" type="Timer" parent="UI/RespawnTimer"]
 
 [node name="Sarah-clark-environment" type="Sprite2D" parent="."]
-visible = false
 z_index = -3000
 position = Vector2(399, 118)
 scale = Vector2(1.10926, 1.10926)
 texture = ExtResource("5_urblq")
 
 [node name="Sarah-clark-environment2" type="Sprite2D" parent="."]
-visible = false
 z_index = -3000
 position = Vector2(2524, 118)
 scale = Vector2(1.10926, 1.10926)
 texture = ExtResource("5_urblq")
 
 [node name="Sarah-clark-environment3" type="Sprite2D" parent="."]
-visible = false
 z_index = -3000
 position = Vector2(-1730, 118)
 scale = Vector2(1.10926, 1.10926)

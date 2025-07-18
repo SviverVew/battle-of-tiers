@@ -1,40 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr7d3q2unwhuw"]
+[gd_scene load_steps=8 format=3 uid="uid://dr7d3q2unwhuw"]
 
-[ext_resource type="Texture2D" uid="uid://dl2j4x501sufu" path="res://assets/Sprites/shaded-dark/shadedDark06.png" id="1_db6sc"]
 [ext_resource type="Script" uid="uid://3pdu1sbi4qeg" path="res://scripts/touch_control.gd" id="1_mp861"]
-[ext_resource type="Texture2D" uid="uid://bo8g3bo4h5qq5" path="res://assets/Sprites/shaded-dark/shadedDark05.png" id="2_mp861"]
-[ext_resource type="Texture2D" uid="uid://w2uk50aebflu" path="res://assets/Sprites/shaded-dark/shadedDark10.png" id="3_njokg"]
+[ext_resource type="Texture2D" uid="uid://1cd1mlih841u" path="res://assets/Sprites/shaded-light/shadedLight24.png" id="2_ri8ys"]
+[ext_resource type="Texture2D" uid="uid://gq0oliwme40l" path="res://assets/Sprites/shaded-light/shadedLight25.png" id="3_psnjc"]
+[ext_resource type="Texture2D" uid="uid://s2kbdiav7p80" path="res://assets/Sprites/shaded-light/shadedLight26.png" id="4_m812e"]
+[ext_resource type="Texture2D" uid="uid://5l1j3ry7qxlp" path="res://assets/Sprites/shaded-light/shadedLight49.png" id="5_cut6h"]
+[ext_resource type="Texture2D" uid="uid://lk5w0jepm47k" path="res://assets/Sprites/shaded-light/shadedLight36.png" id="6_strd3"]
+[ext_resource type="Texture2D" uid="uid://cvamc0eferxby" path="res://assets/Sprites/shaded-light/shadedLight37.png" id="7_k4xrd"]
 
 [node name="TouchControl" type="CanvasLayer"]
 script = ExtResource("1_mp861")
 
 [node name="Left" type="TouchScreenButton" parent="."]
 position = Vector2(53, 500)
-scale = Vector2(1.25, 1.25)
-texture_normal = ExtResource("1_db6sc")
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("2_ri8ys")
 passby_press = true
 action = "ui_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
 position = Vector2(283, 500)
-scale = Vector2(1.25, 1.25)
-texture_normal = ExtResource("2_mp861")
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_psnjc")
 passby_press = true
 action = "ui_right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(63, 12)
-scale = Vector2(1.93443, 1.93443)
-texture_normal = ExtResource("3_njokg")
+position = Vector2(819, 558)
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("4_m812e")
 action = "ui_accept"
 
 [node name="Atack" type="TouchScreenButton" parent="."]
+position = Vector2(1050, 515)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_cut6h")
+action = "attack"
 
 [node name="Skill1" type="TouchScreenButton" parent="."]
+position = Vector2(893, 399)
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("6_strd3")
 
 [node name="Skill2" type="TouchScreenButton" parent="."]
-
-[node name="Skill3" type="TouchScreenButton" parent="."]
+position = Vector2(1075, 327)
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("7_k4xrd")
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="released" from="Left" to="." method="_on_left_released"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="released" from="Right" to="." method="_on_right_released"]
+[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
+[connection signal="released" from="Up" to="." method="_on_up_released"]
+[connection signal="pressed" from="Atack" to="." method="_on_atack_pressed"]
+[connection signal="released" from="Atack" to="." method="_on_atack_released"]
+[connection signal="pressed" from="Skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="released" from="Skill1" to="." method="_on_skill_1_released"]
+[connection signal="pressed" from="Skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="released" from="Skill2" to="." method="_on_skill_2_released"]
